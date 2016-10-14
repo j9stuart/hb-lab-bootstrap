@@ -15,6 +15,12 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid" id="panda-navbar">
         <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
           <a class="navbar-brand" href="#">Ubermelon</a>
         </div>
 
@@ -25,11 +31,23 @@
         <li><a href="#">Shop</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Favorite Melons</a></li>
-        <li><a href="#">Settings</a></li>
-        <li><a href="#">Profile</a></li>
-      </ul>
+        <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Search</button>
+        </form>
+        <li><a data-toggle="modal" href="#myModal">Login</a></li>
+        <li role="presentation" class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Settings <span class="caret"></span>
+          </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Favorite Melons</a></li>
+              <li><a href="#">Settings</a></li>
+              <li><a href="#">Profile</a></li>  
+            </ul>
+        </li>
+        </ul>
     </div>
   </div>
 
@@ -57,52 +75,61 @@
   </div>
 
 <!-- Table that only appears on large devices -->
-  <div class="container" id="panda-table">  
+  <div class="container">  
     <div class="row">
-      <div class="hidden-xs hidden-sm hidden-md">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Melon</th>
-            <th>Price</th>
-            <th>Color</th>
-            <th>Country</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Canteloupe</td>
-            <td>$4.99/lb</td>
-            <td>Tan</td>
-            <td>Italy</td>
-          </tr>
-          <tr>
-            <td>Honeydew</td>
-            <td>$3.99/lb</td>
-            <td>White/Green</td>
-            <td>France/Algeria</td>
-          </tr>
-          <tr>
-            <td>Casaba</td>
-            <td>$7.99/lb</td>
-            <td>Yellow</td>
-            <td>Turkey</td>
-          </tr>
-        </tbody>
+      <div class="hidden-xs hidden-sm">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Melon</th>
+              <th>Price</th>
+              <th>Color</th>
+              <th>Country</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="row">Canteloupe</td>
+              <td>$4.99/lb</td>
+              <td>Tan</td>
+              <td>Italy</td>
+            </tr>
+            <tr>
+              <td scope="row">Honeydew</td>
+              <td>$3.99/lb</td>
+              <td>White/Green</td>
+              <td>France/Algeria</td>
+            </tr>
+            <tr>
+              <td scope="row">Casaba</td>
+              <td>$7.99/lb</td>
+              <td>Yellow</td>
+              <td>Turkey</td>
+            </tr>
+          </tbody>
       </table>
     </div>
     </div>
   </div>
 
-
-
-
-
-
-
-
-
-
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Login</h4>
+      </div>
+      <div class="modal-body">
+          <p>Log in to your account!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- You need this in order to use JS-based components in the 
 further study. Leave this at the bottom and code above it. -->
